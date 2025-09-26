@@ -9,10 +9,8 @@ public class EdT3A1 {
         Scanner leer=new Scanner(System.in);
         System.out.println("introduce la cantidad de datos a almacenar");
         int Max=leer.nextInt();
-        String DatosPila[]=new String[Max];
         pila objeto=new pila(Max); 
         do {
-        
         System.out.println("menu");
         System.out.println("1.- agregar dato");
         System.out.println("2.- mostrar");

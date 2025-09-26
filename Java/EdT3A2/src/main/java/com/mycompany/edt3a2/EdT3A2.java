@@ -8,10 +8,10 @@ public class EdT3A2 {
         Scanner leer=new Scanner(System.in);
         System.out.println("introduce cuantos Discos queres almacenar");
         int Tope=leer.nextInt();
-        char O,D;
         Pila A=new Pila(Tope);
         Pila B=new Pila(Tope);
         Pila C=new Pila(Tope);
+        Pila O,D;
         //crear la torre a
         for (int i = Tope; i >= 1; i--) {
             A.Push(i);
@@ -28,32 +28,10 @@ public class EdT3A2 {
             C.mostrar();
                 
             System.out.println("introduce origen");
-            O=leer.next().charAt(0);
+            O=seleccionarpila(A,B,C,leer.next().charAt(0));
             System.out.println("introduce destino");
-            D=leer.next().charAt(0);
-            switch(O){
-                case 'A'->{
-                switch(D){
-                        case 'B'->{MoverDisco(A,B);}
-                        case 'C'->{MoverDisco(A,C);}
-                }
-                    
-                        
-                    }
-                case 'B'->{
-                switch(D){
-                        case 'A'->{ MoverDisco(B,A);}
-                        case 'C'->{MoverDisco(B,C);}
-                }  }
-                    case 'C'->{
-                        switch(D){
-                        case 'A'->{MoverDisco(C,A);}
-                        case 'B'->{MoverDisco(C,B);}
-                    }
-                    
-                    }
-                
-            }
+            D=seleccionarpila(A,B,C,leer.next().charAt(0));
+            MoverDisco(O,D);
             if (C.PilaLlena()) {
                 System.out.println("Ganaste");
                 System.out.println("Torre C");
@@ -70,7 +48,14 @@ public class EdT3A2 {
             D.Push(O.Pop());
             
         }
-        
+    }
+    static Pila seleccionarpila(Pila a,Pila b,Pila c,char h){
+        switch(h){
+            case 'A'->{return a;}
+            case 'B'->{return b;}
+            case 'C'->{return c;}
+        }
+            return null;
     }
     
 }
