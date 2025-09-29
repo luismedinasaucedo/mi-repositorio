@@ -40,23 +40,32 @@ def postorden(a:Pila,b:Pila,c:Pila):
       contador=0
       par=0
       while a.pilallena()==False:
-            if c.pull() in "+-*/":##si es un operador
-                  b.push(c.pop())
-                  contador+=1
-            elif c.pull() in "123456789":# si es un numero
-                  a.push(c.pop())
-            elif c.pull() in "()":
+            if c.pull() in "()":
+                  #print("3")
                   c.pop()
                   par+=1
-            if contador==1 and par<2:
+            elif c.pull() in "+-*/":##si es un operador
+                  #print("1")
+                  b.push(c.pop())
+            elif c.pull() in "123456789":# si es un numero
+                  #print("2")
+                  a.push(c.pop())
+            
+            elif contador==1 and par<2:
+                  #print("4")
                   mover(b,a)
                   contador=0
             if par==4:
+                  #print("5")
                   mover(b,a)
                   par=0
             if c.pilavacia():
+                  #print("6")
                   mover(b,a)
+            if c.pilavacia() and b.pilavacia():
+                  #print("7")
+                  a.push("")
             
             
-postorden(PilaA,PilaB,PilaC)
-PilaA.mostrar() 
+postorden(PilaA,PilaB,PilaC)#(4+5)/(3-2)
+PilaA.mostrar()

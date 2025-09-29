@@ -41,6 +41,9 @@ public boolean PilaVacia(){
     return Tope == -1;
 }
 public String pull(){
+    if (Tope==-1) {
+        return null;
+    }
     return PilaInicial[Tope];
 }
 

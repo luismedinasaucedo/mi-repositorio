@@ -21,5 +21,8 @@ public void pop(){
 tope=tope.getAnterior();
 }
 public int pull(){
+    if (tope==null) {
+        return 0;
+    }
 return tope.getDato();}
 }
