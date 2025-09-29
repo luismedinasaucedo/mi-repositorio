@@ -17,8 +17,7 @@ private int PilaInicial[];
     PilaInicial[++Tope]=D;
 }//agregar
 public int Pop(){
-    return PilaInicial[Tope--];
-    
+    return PilaInicial[Tope--];    
 }//eliminar
 public void mostrar(){
     if (PilaVacia()) {

@@ -16,9 +16,8 @@ private String PilaInicial[];
     PilaInicial[++Tope]=D;
 }//agregar
 public String Pop(){
-    return PilaInicial[Tope--];
-    
-}//eliminar
+        return PilaInicial[Tope--];
+    }//eliminar
 public void mostrar(){
     if (PilaVacia()) {
             System.out.println("la torre esta vacia");

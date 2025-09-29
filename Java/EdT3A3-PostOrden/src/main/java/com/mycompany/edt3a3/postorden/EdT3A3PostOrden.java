@@ -11,14 +11,10 @@ public class EdT3A3PostOrden {
         Pila Base=new Pila(Operacion.length());
         Pila Auxiliar=new Pila(Operacion.length());
         Pila Operadores=new Pila(Operacion.length());
-        
-        
         llenar(Operacion,Base);
         Base.mostrar();
         System.out.println("-------------------------");
         preorden(Auxiliar,Base,Operadores);
-        
-        
     }
     static void llenar(String D,Pila E){
         for (int i = 0; i < D.length(); i++) {
@@ -32,24 +28,24 @@ public class EdT3A3PostOrden {
                 System.out.println("1");
                 B.Pop();
                 par++;
-            }
-            if (B.pull().equals("+") || B.pull().equals("-")) {
+            }//si es parentesis
+            else if (B.pull().equals("+") || B.pull().equals("-")) {
                 System.out.println("2");
              // es un operador
              C.Push(B.Pop());
              contador=2;
             }
-            if (!B.pull().equals("+") && !B.pull().equals("-")) {
+            else if (!B.pull().equals("+") && !B.pull().equals("-") ) {
                 System.out.println("3");
              //no es operando
              A.Push(B.Pop());
             }
-            if ((contador%2==0&&contador!=0)) {
+            else if (contador%2==0&&contador!=0&&par!=2&&par!=3) {
                 System.out.println("4");
                 A.Push(C.Pop());
                 contador=0;
             }
-            if (par==4) {
+            else if (par==4) {
                 System.out.println("5");
                 A.Push(C.Pop());
                 par=0;
