@@ -25,13 +25,16 @@ class Pila:
         for i in range(self.Tope,-1,-1):
                 print(self.PilaInicial[i])
 def mover(O:Pila,D:Pila):
-       if O.PIlaVacia():
-              print("pila de origen vacia")
-              return
-       if D.PIlaVacia():
               D.Push(O.pop())
         
-
+def seleccionarpila(A:Pila,B:Pila,C:Pila,K):
+       match K:
+              case "A":
+                     return A
+              case "B":
+                     return B
+              case "C":
+                     return C
 Top=int(input("Escribe la cantidad de Discos: "))
 PilaA=Pila(Top)
 PilaB=Pila(Top)
@@ -46,23 +49,9 @@ while not PilaC.PilaLlena():
         PilaB.mostrar()
         print("pila C")
         PilaC.mostrar()
-        O=input("selecciona pila de origen")
-        D=input("selecciona pila de destino")
-        
-        match O:
-               case "B":
-                      match D:
-                             case "C":
-                                    mover(PilaB,PilaC)
-                             case "A":
-                                    mover(PilaB,PilaA)
-
-               case "A":
-                      match D:
-                             case "C":
-                                    mover(PilaA,PilaC)
-                             case "B":
-                                    mover(PilaA,PilaB)
-                
-                      
+        O=seleccionarpila(PilaA,PilaB,PilaC,input("selecciona la pila de origen: "))
+        D=seleccionarpila(PilaA,PilaB,PilaC,input("selecciona la pila de destino: "))
+        mover(O,D)
+print("Ganaste")
+PilaC.mostrar()
                                        

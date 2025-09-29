@@ -6,9 +6,9 @@ private String PilaInicial[];
 
 
     public Pila(int Max) {
-        this.Max = Max;
-        this.Tope = -1;
-        this.PilaInicial = new String [Max];
+        this.Max = Max+1;
+        this.Tope = 0;
+        this.PilaInicial = new String [Max+1];
         
     }
 
@@ -18,6 +18,12 @@ private String PilaInicial[];
 public String Pop(){
         return PilaInicial[Tope--];
     }//eliminar
+    public String eliminar(){
+    Tope--;
+        if (Tope==-1) {
+            return PilaInicial[0];
+        }else {return PilaInicial[Tope];}
+    }
 public void mostrar(){
     if (PilaVacia()) {
             System.out.println("la torre esta vacia");
