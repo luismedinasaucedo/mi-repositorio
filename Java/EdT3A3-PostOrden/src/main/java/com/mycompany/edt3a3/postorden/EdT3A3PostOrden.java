@@ -27,28 +27,31 @@ public class EdT3A3PostOrden {
             if (B.pull()!=null) {
                 if (B.pull().equals(")") || B.pull().equals("(")) {
                 //System.out.println("1");
-                B.eliminar();
+                B.eliminar();//es parentesis
             }
-            else if (B.pull().equals("+") || B.pull().equals("-")) {
+            else if (B.pull().equals("+") || B.pull().equals("-") || B.pull().equals("*") || B.pull().equals("/")) {
                 //System.out.println("2");
              // es un operador
              C.Push(B.Pop());
-             contador++;
+             
             }
             else if (B.pull().equals("1")||B.pull().equals("2")||B.pull().equals("3")||B.pull().equals("4")||B.pull().equals("5")) { 
                 //System.out.println("3");
-             //no es operando
+             //es operando numero
              A.Push(B.Pop());
-             
+             contador++;
             }
                 
             }
-            
-            }if (contador==1) {//
+            if (contador==2) {//
                 //System.out.println("4");
                 A.Push(C.Pop());
                 contador=0;
-
+            }
+            
+        }
+        if (!C.PilaVacia()) {
+            A.Push(C.Pop());
         }
         A.mostrar();// (4+5)+(3-2)
     }
