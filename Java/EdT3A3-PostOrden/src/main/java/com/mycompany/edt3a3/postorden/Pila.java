@@ -6,9 +6,9 @@ private String PilaInicial[];
 
 
     public Pila(int Max) {
-        this.Max = Max+1;
-        this.Tope = 0;
-        this.PilaInicial = new String [Max+1];
+        this.Max = Max;
+        this.Tope = -1;
+        this.PilaInicial = new String [Max];
         
     }
 
