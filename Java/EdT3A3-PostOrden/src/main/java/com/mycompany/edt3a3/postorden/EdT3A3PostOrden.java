@@ -22,7 +22,7 @@ public class EdT3A3PostOrden {
         }
     }
     static void preorden(Pila A,Pila B,Pila C){
-        int contador=0,par=0;
+        int contador=0;
         while(!B.PilaVacia()){
             if (B.pull()!=null) {
                 if (B.pull().equals(")") || B.pull().equals("(")) {
