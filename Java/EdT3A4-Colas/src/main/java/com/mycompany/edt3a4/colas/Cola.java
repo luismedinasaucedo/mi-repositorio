@@ -30,9 +30,7 @@ private int Max,inicio,fin,numcola;
         inicio = (inicio + 1) % Max; 
         return valor;
         }
-        
-        
-    }
+        }
     public boolean ColaVacia(){
         return inicio==fin;
     }
