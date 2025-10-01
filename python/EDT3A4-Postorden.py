@@ -39,7 +39,7 @@ while not PilaC.pilallena():
 def postorden(a:Pila,b:Pila,c:Pila):
       contador=0
       par=0
-      while a.pilallena()==False:
+      while not c.pilavacia():
             if c.pull() in "()":
                   #print("3")
                   c.pop()
@@ -50,8 +50,9 @@ def postorden(a:Pila,b:Pila,c:Pila):
             elif c.pull() in "123456789":# si es un numero
                   #print("2")
                   a.push(c.pop())
+                  contador+=1
             
-            elif contador==1 and par<2:
+            if contador==2 and par<2:
                   #print("4")
                   mover(b,a)
                   contador=0
