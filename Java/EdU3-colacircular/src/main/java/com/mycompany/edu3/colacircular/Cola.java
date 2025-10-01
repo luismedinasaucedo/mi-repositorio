@@ -33,7 +33,7 @@ public class Cola {
     return inicio==fin;
     }
     public boolean ColaLlena(){
-        return (inicio==0&fin==Datos.length)||(inicio==fin+1);
+        return (inicio==0 & fin==Datos.length)||(inicio==fin+1);
     }
     
 
