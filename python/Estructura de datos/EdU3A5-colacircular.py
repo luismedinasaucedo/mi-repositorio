@@ -21,7 +21,10 @@ class cola:
         return (self.inicio==0 and self.fin==len(self.Datos)) or self.inicio==self.fin+1
     def colavacia(self):
         return self.inicio==self.fin
-    
+    def mostrar(self):
+        for i in range(self.Datos,self.inicio):
+            print("")
+
 
 
 maxi=int(input("introduce el maximo de datos: "))

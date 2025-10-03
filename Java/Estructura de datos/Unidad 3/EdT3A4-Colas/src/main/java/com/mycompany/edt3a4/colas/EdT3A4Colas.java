@@ -24,6 +24,7 @@ public class EdT3A4Colas {
                 nombres.Desencolar();
             }
             case 3->{System.out.println("eligio salir");}
+            case 4->{nombres.mostrar();}
             
         
         }

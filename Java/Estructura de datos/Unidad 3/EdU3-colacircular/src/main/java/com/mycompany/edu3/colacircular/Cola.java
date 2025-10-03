@@ -2,10 +2,10 @@ package com.mycompany.edu3.colacircular;
 
 public class Cola {
     private String Datos[];
-    private int inicio,fin;
+    private int inicio,fin,max;
 
-    public Cola(int T) {
-        Datos = new String[T];
+    public Cola(int max) {
+        Datos = new String[max];
         inicio = fin = -1;//sin datos en la cola
     }
     public void encolar(String d){
@@ -25,6 +25,7 @@ public class Cola {
         }else{
             inicio++;
         }
+       
         
         
     return d;
@@ -36,7 +37,16 @@ public class Cola {
         return (inicio==0 & fin==Datos.length)||(inicio==fin+1);
     }
     
-
+ public void mostrar(){
+     int i=inicio;
+     do {
+         if (i==max) {
+             i=0;
+         }
+         System.out.println(Datos[i]);
+         i++;
+     } while (i!=fin+1);
+ }
 
 
 }

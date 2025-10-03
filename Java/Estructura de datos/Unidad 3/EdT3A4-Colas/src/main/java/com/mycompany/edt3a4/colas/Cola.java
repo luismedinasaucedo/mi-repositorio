@@ -44,9 +44,9 @@ private int Max,inicio,fin,numcola;
             return;
         }else {
         int i= inicio;
-            System.out.println("cola: ");
             while(i!=fin){
-            
+            System.out.println("cola: "+ColaInicial[i]);
+            i++;
             }
         }
             
