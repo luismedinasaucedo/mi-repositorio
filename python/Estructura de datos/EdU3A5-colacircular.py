@@ -22,23 +22,29 @@ class cola:
     def colavacia(self):
         return self.inicio==self.fin
     def mostrar(self):
-        for i in range(self.Datos,self.inicio):
-            print("")
+        i=self.inicio+1
+        while not i==self.fin+1:
+            print(self.Datos[i])
+            i+=1
 
 
 
 maxi=int(input("introduce el maximo de datos: "))
 cola1 = cola(maxi)
 ops=0
-while not ops==3:
+while not ops==4:
     print("1.- agregar dato")
     print("2.- borrar dato")
     print("3.- mostrar datos")
+    print("4.- salir")
     ops=int(input(""))
     match ops:
         case 1:
-            cola1.encolar(input("escribe el dato a agregar"))
+            cola1.encolar(input("escribe el dato a agregar: "))
         case 2:
             cola1.desencolar()
         case 3:
-            print()
+            cola1.mostrar()
+        case 4:
+            print("usted eligio salir")
+        
