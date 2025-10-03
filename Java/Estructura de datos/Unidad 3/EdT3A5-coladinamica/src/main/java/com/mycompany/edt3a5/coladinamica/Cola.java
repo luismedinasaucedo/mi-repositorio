@@ -32,7 +32,9 @@ public class Cola {
         Aux=Aux.getSig();
     }
     }
-    public void ColaVacia(){}
+    public void ColaVacia(){
+        
+    }
     
     
 }
