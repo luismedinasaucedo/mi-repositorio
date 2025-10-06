@@ -19,6 +19,9 @@ public class Cola {
         }
     }
     public String desencolar(){
+        if (ColaVacia()) {
+            return null;
+        }
         String d=Datos[inicio];
         if (inicio==fin) {
             inicio=fin=-1;
@@ -38,6 +41,9 @@ public class Cola {
     }
     
  public void mostrar(){
+     if (ColaVacia()) {
+         return;
+     }
      int i=inicio;
      do {
          if (i==max) {

@@ -18,6 +18,9 @@ public class Cola {
         fin=nuevo;
     }
     public String desencolar(){
+        if (inicio==null) {
+            return null;
+        }
     String s=inicio.getDato();
     inicio=inicio.getSig();
         if (inicio==null) {
@@ -32,8 +35,8 @@ public class Cola {
         Aux=Aux.getSig();
     }
     }
-    public void ColaVacia(){
-        
+    public boolean ColaVacia(){
+        return inicio==null;
     }
     
     
