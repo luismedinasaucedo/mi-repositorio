@@ -15,8 +15,8 @@ print(lista)
 
 front_end = ['HTML', 'CSS', 'JS', 'React', 'Redux']
 back_end = ['Node','Express', 'MongoDB']
-full_stack= front_end+back_end
+full_stack= front_end+["python","SQL"]+back_end
 #full_stack.insert(full_stack.index('Redux')+1,"python")
 
-full_stack[full_stack.index('Redux'):full_stack.index('Redux')] = ['Python', 'SQL']
+#full_stack[full_stack.index('Redux'):full_stack.index('Redux')] = ['Python', 'SQL']
 print(full_stack)
