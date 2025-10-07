@@ -13,6 +13,7 @@ public class EdT3A6Bicola {
             System.out.println("\tMenu");
             System.out.println("1.- añadir dato al principio \n2.- añadir dato al final \n3.- eliminar dato al principio \n4.- eliminar dato al final \n5.- Mostrar datos\n6.- salir");
             ops=leer.nextInt();
+            System.out.println();
             switch(ops){
                 case 1->{
                     System.out.println("escribe al dato a insertar");
