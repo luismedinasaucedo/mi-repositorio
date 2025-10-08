@@ -15,7 +15,6 @@ public class EdU4A7ColaDePrioridad {
     public static void main(String[] args) {
         Scanner leer=new Scanner(System.in);
         int ops=0;
-        System.out.println(" introduce max de datos: ");
         Cola nombres=new Cola();
         do {
             System.out.println("menu");
