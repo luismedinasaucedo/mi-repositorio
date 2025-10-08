@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="469c519b-028b-4de1-afb9-b2165fdd8e88" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Java/Estructura de datos/Unidad 2/comundivisor/target/classes/com/mycompany/comundivisor/Comundivisor.class" beforeDir="false" afterPath="$PROJECT_DIR$/Java/Estructura de datos/Unidad 2/comundivisor/target/classes/com/mycompany/comundivisor/Comundivisor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Java/Estructura de datos/Unidad 3/Colas/EdT3A6-Bicola/src/main/java/com/mycompany/edt3a6/bicola/EdT3A6Bicola.java" beforeDir="false" afterPath="$PROJECT_DIR$/Java/Estructura de datos/Unidad 3/Colas/EdT3A6-Bicola/src/main/java/com/mycompany/edt3a6/bicola/EdT3A6Bicola.java" afterDir="false" />
-    </list>
+    <list default="true" id="469c519b-028b-4de1-afb9-b2165fdd8e88" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

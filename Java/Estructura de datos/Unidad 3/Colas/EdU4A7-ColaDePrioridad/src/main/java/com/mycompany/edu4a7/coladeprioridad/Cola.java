@@ -21,33 +21,32 @@ public class Cola {
             System.out.println("cola vacia...");
             return null;
         }
-        Proceso Aux=inicio;
-        for (int i = 3; i <= 0; i--) {
-            if (Aux.getPrio()==i) {
-                String s=Aux.getDato();
-                inicio=Aux.getSig();
-                return s;
-            }
+        
+        for (int i = 4; i <= 0; i--) {
+            Proceso Aux=inicio;
+            //if (Aux.getPrio()==i) {
+                //String s=Aux.getDato();
+                //inicio=Aux.getSig();
+                //return s;
+            //}
             while (Aux!=null){
                 if (Aux.getSig().getPrio()==i){
+                    System.out.println("1");
                     String s=Aux.getSig().getDato();
                     Aux.setSig(Aux.getSig().getSig());
+                    return s;
                 }
+                Aux=Aux.getSig();
             }
         }
-        
-        
-    String s=inicio.getDato();
-    inicio=inicio.getSig();
-        if (inicio==null) {
-            fin=null;
-        }
-    return s;
+        return null;
     }
     public void mostrar(){
     Proceso Aux=inicio;
     while(Aux!=null){
-        System.out.println(Aux.getDato());
+        System.out.println("Dato     : "+Aux.getDato());
+        System.out.println("Prioridad: "+Aux.getPrio());
+        System.out.println("");
         Aux=Aux.getSig();
     }
     }
