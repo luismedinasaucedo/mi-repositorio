@@ -18,30 +18,39 @@ public class Cola {
     }
     public String desencolar(){
         if (ColaVacia()) {
-            System.out.println("cola vacia...");
+            System.out.println("la cola esta vacia...");
             return null;
         }
-        
-        for (int i = 4; i <= 0; i--) {
+        for (int i = 4; i >= 0; i--) {
             Proceso Aux=inicio;
-            //if (Aux.getPrio()==i) {
-                //String s=Aux.getDato();
-                //inicio=Aux.getSig();
-                //return s;
-            //}
+             if (Aux.getPrio()==i) {
+                String s=Aux.getDato();
+                inicio=Aux.getSig();
+                return s;
+            }
+            //System.out.println("1");
+            Aux=inicio;
             while (Aux!=null){
+                //System.out.println("2");
+                if (Aux.getSig()==null) {
+                    break;
+                }
                 if (Aux.getSig().getPrio()==i){
                     System.out.println("1");
                     String s=Aux.getSig().getDato();
                     Aux.setSig(Aux.getSig().getSig());
                     return s;
                 }
+                
                 Aux=Aux.getSig();
             }
         }
         return null;
     }
     public void mostrar(){
+        if (ColaVacia()) {
+            System.out.println("la cola esta vacia...");
+        }
     Proceso Aux=inicio;
     while(Aux!=null){
         System.out.println("Dato     : "+Aux.getDato());
@@ -56,3 +65,8 @@ public class Cola {
     
     
 }
+//if (Aux.getPrio()==i) {
+                //String s=Aux.getDato();
+                //inicio=Aux.getSig();
+                //return s;
+            //}
