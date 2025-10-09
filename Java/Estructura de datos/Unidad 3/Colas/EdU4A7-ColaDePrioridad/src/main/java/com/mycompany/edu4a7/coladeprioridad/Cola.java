@@ -62,7 +62,37 @@ public class Cola {
     public boolean ColaVacia(){
         return inicio==null;
     }
+    public void mostrarconprio(){
+        if (ColaVacia()) {
+            System.out.println("la cola esta vacia...");
+            return;
+        }
+        for (int i = 4; i >= 0; i--) {
+            Proceso Aux=inicio;
+             if (Aux.getPrio()==i) {
+                System.out.println("Dato     : "+Aux.getDato());
+                System.out.println("Prioridad: "+Aux.getPrio());
+            }
+            //System.out.println("1");
+            Aux=inicio;
+            while (Aux!=null){
+                //System.out.println("2");
+                if (Aux.getSig()==null) {
+                    break;
+                }
+                if (Aux.getSig().getPrio()==i){
+                    System.out.println("Dato      : "+Aux.getSig().getDato());
+                    System.out.println("Prioridad: "+Aux.getSig().getPrio());
+                    //System.out.println("1");
+                    //String s=Aux.getSig().getDato();
+                    //Aux.setSig(Aux.getSig().getSig());
+                    //return s;
+                }//if
+                Aux=Aux.getSig();
+            }//while
+        }//for
     
+    }
     
 }
 //if (Aux.getPrio()==i) {
