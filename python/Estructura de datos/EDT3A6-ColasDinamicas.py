@@ -2,8 +2,11 @@ class Nodo:
     def __init__(self,Dato):
         self.Dato=Dato
         self.Sig=None
+    def setsig(self,e):
+        self.Sig=e
+    def getsig(self):
+        return self.Sig
     
-
 class Cola:
     def __init__(self):
         self.fin=None
@@ -14,7 +17,8 @@ class Cola:
         if self.inicio==None:
             self.inicio=self.fin=Nodo1
         else:
-            self.fin.Sig=Nodo1
+            self.fin.setsig(Nodo1)
+            self.fin=Nodo1
 
     def ColaVacia(self):
         return self.inicio==None
@@ -26,12 +30,13 @@ class Cola:
         while(not Aux==None):
             print(Aux.Dato)
             Aux=Aux.Sig
+        
     def desencolar(self):
         if self.ColaVacia():
             print("La cola esta vacia")
             return None
         s=self.inicio.Dato
-        self.inicio=self.inicio.Sig
+        self.inicio=self.inicio.getsig()
         return s
         
         
