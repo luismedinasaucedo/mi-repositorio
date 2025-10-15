@@ -13,14 +13,31 @@ public class Lista {
     return inicio==null;
     }
     
-    public void insertar(String d){
+    public void insertar(String dato){
+        Nodo nuevo=new Nodo(dato);
         if (listavacia()) {
-            inicio=fin=new Nodo(d);
+            inicio=fin=nuevo;
             return;
+        }//si esta vacia
+        Nodo aux=inicio;
+        while(aux!=null){
+            if ((int)aux.getDato().charAt(0)>(int)nuevo.getDato().charAt(0)) {
+                if (aux==inicio) {
+                    inicio=nuevo;
+                }
+            nuevo.setSig(aux);
+            aux.setAnt(nuevo);
+            
+            }
+            aux=aux.getSig();
         }
-        if (true) {
-            inicio=new Nodo(d);
-        }//menor que inicio ejemplo alfredo es menor que osvaldo
+    }
+    public void mostrar(){
+    Nodo Aux=inicio;
+    while(Aux!=null){
+        System.out.println(Aux.getDato());
+        Aux=Aux.getSig();
+    }
     }
     
     
