@@ -1,5 +1,7 @@
 package com.mycompany.edt3a5.coladinamica;
-
+//luis carlo medina saucedo
+//miguel ivan carrillo ventura
+//luis javier robles topete
 import java.util.Scanner;
 
 public class EdT3A5Coladinamica {

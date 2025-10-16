@@ -9,10 +9,7 @@ public class Mavenproject1 {
         Scanner leer=new Scanner(System.in);
         int ops=0;
         Lista nombres=new Lista();
-        nombres.insertar("bruno");
-        nombres.insertar("alex");
-        nombres.insertar("carlo");
-        nombres.insertar("belen");
+        
         do {
             System.out.println("menu");
             System.out.println("1.- agregar");

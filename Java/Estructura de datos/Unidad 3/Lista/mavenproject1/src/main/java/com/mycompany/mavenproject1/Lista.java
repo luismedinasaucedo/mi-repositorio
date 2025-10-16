@@ -35,7 +35,14 @@ public class Lista {
         while(aux!=null){
             //System.out.println(aux.getDato());
             if ((int)aux.getDato().charAt(0)>=(int)nuevo.getDato().charAt(0)) {
-                //System.out.println("14");
+                if (aux==fin) {
+                    nuevo.setAnt(aux.getAnt());
+                    aux.getAnt().setSig(nuevo);
+                    nuevo.setSig(aux);
+                    aux.setAnt(nuevo);
+                    return;
+                    
+                }//si es el dato que esta antes que el ultimo
                 aux.getSig().setAnt(nuevo);
                 nuevo.setSig(aux.getSig());
                 aux.setSig(nuevo);
@@ -48,6 +55,10 @@ public class Lista {
     }
     
     public void mostrar(){
+        if (listavacia()) {
+            System.out.println("lista vacia");
+            return;
+        }
     Nodo Aux=inicio;
     int i=1;
     while(Aux!=null){
@@ -85,6 +96,10 @@ public class Lista {
     }
     
     public void modificar(String mod1,String mod2){
+        if (listavacia()) {
+            System.out.println("lista vacia");
+            return;
+        }
     borrar(mod1);
     insertar(mod2);
     }
