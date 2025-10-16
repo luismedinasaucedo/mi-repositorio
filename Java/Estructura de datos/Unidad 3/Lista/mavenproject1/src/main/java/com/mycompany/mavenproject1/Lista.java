@@ -46,6 +46,7 @@ public class Lista {
             aux=aux.getSig();
         }
     }
+    
     public void mostrar(){
     Nodo Aux=inicio;
     int i=1;
@@ -55,6 +56,37 @@ public class Lista {
         i++;
     }
         System.out.println("");
+    }
+    
+    public void borrar(String borr){
+        if (listavacia()) {
+            System.out.println("la lista esta vacia");
+            return;
+        }//si esta vacia
+        if (inicio.getDato().equals(borr)) {
+            inicio=inicio.getSig();
+            inicio.setAnt(null);
+            return;
+        }//si esta al inicio
+        if (fin.getDato().equals(borr)) {
+            fin=fin.getAnt();
+            fin.setSig(null);
+            return;
+        }//si esta al final
+        Nodo aux=inicio;
+        while(aux!=null){
+            if (aux.getDato().equals(borr)) {
+                aux.getAnt().setSig(aux.getSig());
+                aux.getSig().setAnt(aux.getAnt());
+                return;
+            }
+            aux=aux.getSig();
+        }//si esta entre datos
+    }
+    
+    public void modificar(String mod1,String mod2){
+    borrar(mod1);
+    insertar(mod2);
     }
     
     
