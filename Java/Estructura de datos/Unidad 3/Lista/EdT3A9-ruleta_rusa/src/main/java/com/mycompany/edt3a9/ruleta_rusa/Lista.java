@@ -43,18 +43,21 @@ public class Lista {
         int cantidad_con_eliminados=cantidad;
         while(!listavacia()){
             
-            int num=(int)(Math.random()*(cantidad_con_eliminados));
+            int num=(int)(Math.random()*(cantidad_con_eliminados-1)+1);
             System.out.println(num);
             if (inicio.getSig()==null) {
                 System.out.println("gano: "+inicio.getDato());
                 inicio=fin=null;
+                break;
             }
             if (num==1) {
+                //System.out.println("fallo?");
                 String eliminado=inicio.getDato();
                 inicio=inicio.getSig();
                 inicio.setAnt(null);
                 cantidad_con_eliminados--;
                 System.out.println("se elimino a :"+eliminado);
+                continue;
             }
             if (num==cantidad_con_eliminados) {
                 String eliminado=fin.getDato();
@@ -62,6 +65,7 @@ public class Lista {
                 fin.setSig(null);
                 cantidad_con_eliminados--;
                 System.out.println("se elimino a :"+eliminado);
+                continue;
             }
             Nodo aux=inicio;
             for (int i = 1; i <= num; i++) {
