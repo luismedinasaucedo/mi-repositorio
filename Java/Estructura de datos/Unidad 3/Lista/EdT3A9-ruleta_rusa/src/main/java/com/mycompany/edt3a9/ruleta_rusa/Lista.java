@@ -44,7 +44,6 @@ public class Lista {
         while(!listavacia()){
             
             int num=(int)(Math.random()*(cantidad_con_eliminados-1)+1);
-            System.out.println(num);
             if (inicio.getSig()==null) {
                 System.out.println("gano: "+inicio.getDato());
                 inicio=fin=null;
