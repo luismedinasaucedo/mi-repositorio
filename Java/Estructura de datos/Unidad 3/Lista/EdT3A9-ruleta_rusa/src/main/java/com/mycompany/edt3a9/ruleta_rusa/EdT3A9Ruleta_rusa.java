@@ -14,6 +14,7 @@ public class EdT3A9Ruleta_rusa {
             System.out.println("2.- ruleta rusa");
             System.out.println("3.- salir");
             ops=leer.nextInt();
+            System.out.println("");
             switch(ops){
                 case 1->{datos.ingresar();}
                 case 2->{datos.ruleta();}

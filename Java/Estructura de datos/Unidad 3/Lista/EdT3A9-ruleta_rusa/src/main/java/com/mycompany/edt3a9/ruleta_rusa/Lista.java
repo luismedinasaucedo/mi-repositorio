@@ -33,55 +33,45 @@ public class Lista {
             fin.setSig(nuevo);
             fin=nuevo;
         }
+        inicio.setAnt(fin);
+        fin.setSig(inicio);
     }//ingresar
     public void ruleta(){
         if (listavacia()) {
             System.out.println("la lista esta vacia");
         }
         
-        
-        int cantidad_con_eliminados=cantidad;
-        while(!listavacia()){
-            
-            int num=(int)(Math.random()*(cantidad_con_eliminados-1)+1);
-            if (inicio.getSig()==null) {
-                System.out.println("gano: "+inicio.getDato());
-                inicio=fin=null;
-                break;
-            }
-            if (num==1) {
-                //System.out.println("fallo?");
-                String eliminado=inicio.getDato();
-                inicio=inicio.getSig();
-                inicio.setAnt(null);
-                cantidad_con_eliminados--;
-                System.out.println("se elimino a :"+eliminado);
-                continue;
-            }
-            if (num==cantidad_con_eliminados) {
-                String eliminado=fin.getDato();
-                fin=fin.getAnt();
-                fin.setSig(null);
-                cantidad_con_eliminados--;
-                System.out.println("se elimino a :"+eliminado);
-                continue;
-            }
+        while(cantidad!=1){
+            int num=(int)(Math.random()*(6-1)+1);
             Nodo aux=inicio;
-            for (int i = 1; i <= num; i++) {
-                if (i==num) {
-                    String eliminado=aux.getDato();
-                    aux.getAnt().setSig(aux.getSig());
-                    aux.getSig().setAnt(aux.getAnt());
-                    cantidad_con_eliminados--;
-                    System.out.println("se elimino a :"+eliminado);
-                }
-                
+            for (int i = 0; i <= num; i++) {
                 aux=aux.getSig();
+            }
+            if (aux==inicio) {
+                System.out.println("se elimino a: "+aux.getDato());
+                inicio=inicio.getSig();
+                inicio.setAnt(fin);
+                fin.setSig(inicio);
+                cantidad--;
+            }//esta al inicio
+            else if(aux==fin){
+                System.out.println("se elimino a: "+aux.getDato());
+                fin=fin.getAnt();
+                fin.setSig(inicio);
+                inicio.setAnt(fin);
+                cantidad--;
+            }
+            else{
+                System.out.println("se elimino a: "+aux.getDato());
+                aux.getAnt().setSig(aux.getSig());
+                aux.getSig().setAnt(aux.getAnt());
+                cantidad--;
             }
             
             
         }
-    
+        System.out.println("");
+        System.out.println("el ganador es: "+inicio.getDato());
     }
     
 }
