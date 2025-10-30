@@ -42,7 +42,7 @@ public class Lista {
         }
         
         while(cantidad!=1){
-            int num=(int)(Math.random()*(6-1)+1);
+            int num=(int)(Math.random()*6)+1;
             Nodo aux=inicio;
             for (int i = 0; i <= num; i++) {
                 aux=aux.getSig();
@@ -60,13 +60,13 @@ public class Lista {
                 fin.setSig(inicio);
                 inicio.setAnt(fin);
                 cantidad--;
-            }
+            }//esta al final
             else{
                 System.out.println("se elimino a: "+aux.getDato());
                 aux.getAnt().setSig(aux.getSig());
                 aux.getSig().setAnt(aux.getAnt());
                 cantidad--;
-            }
+            }// esta enmedio
             
             
         }
