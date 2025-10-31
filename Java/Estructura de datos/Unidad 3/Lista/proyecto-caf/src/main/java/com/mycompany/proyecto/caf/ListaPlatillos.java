@@ -14,12 +14,32 @@ public class ListaPlatillos {
         Platillo nuevo = new Platillo(nombre);
         if (ListaVacia()) {
             cabecera = nuevo;
+            return;
         }
-        else{
-        cabecera.setSig(nuevo);
-        nuevo.setAnt(cabecera);
-        cabecera = nuevo;
+        
+        
+        Platillo auxplatillo=cabecera;
+    while(auxplatillo!=null){
+        if (cabecera.getNombre().compareTo(nombre)<0) {
+            cabecera.setSig(nuevo);
+            nuevo.setAnt(cabecera);
+            cabecera=nuevo;
+            return;
         }
+        if (auxplatillo.getAnt()==null) {
+            auxplatillo.setAnt(nuevo);
+            nuevo.setSig(auxplatillo);
+            return;
+        }
+        auxplatillo=auxplatillo.getAnt();
+    }
+        
+        
+        //else{
+        //cabecera.setSig(nuevo);
+        //nuevo.setAnt(cabecera);
+        //cabecera = nuevo;
+        //}
     }
 
     public void IngresarIngrediente(String nombreplatillo,String nombreingrediente,String cantidadingrediente){
@@ -101,5 +121,12 @@ public class ListaPlatillos {
             auxplatillo=auxplatillo.getAnt();
 
         }
+    }
+    public void mostrartodo(){
+    Platillo auxplatillo=cabecera;
+    while(auxplatillo!=null){
+        System.out.println(auxplatillo.getNombre());
+        auxplatillo=auxplatillo.getAnt();
+    }
     }
 }
