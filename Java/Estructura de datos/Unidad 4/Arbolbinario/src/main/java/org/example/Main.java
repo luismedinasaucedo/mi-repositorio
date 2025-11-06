@@ -3,10 +3,10 @@ public class Main {
     public static void main(String[] args) {
         Arbol arbol=new Arbol();
         
-        arbol.Insertar(35);
-        arbol.Insertar(90);
-        arbol.Insertar(180);
-        arbol.Insertar(215);
+        arbol.Insertar(8);
+        arbol.Insertar(12);
+        arbol.Insertar(4);
+        arbol.Insertar(2);
         arbol.Insertar(6);
         arbol.Insertar(1);
         arbol.Insertar(3);
@@ -21,7 +21,11 @@ public class Main {
         
         arbol.MostrarInorden();
         System.out.println("");
-        arbol.mostrarpadre();
-        arbol.mostrarh();
+        arbol.Eliminar(1);
+        arbol.MostrarInorden();
+        System.out.println("");
+        arbol.Eliminar(2);
+        arbol.MostrarInorden();
+        
     }
 }

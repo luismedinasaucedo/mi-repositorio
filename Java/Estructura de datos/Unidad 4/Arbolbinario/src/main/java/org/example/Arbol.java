@@ -101,7 +101,7 @@ public class Arbol {
     }
     
     public void mostrarpadre(){
-        System.out.println(BuscarPadre(Raiz,11).getValor());
+        System.out.println(BuscarPadre(Raiz,1).getValor());
         
     }
     
@@ -115,11 +115,25 @@ public class Arbol {
     }
     
     public void Eliminar(int dato){
-        Nodo nodo=Buscar(Raiz,dato);
-        nodo.setValor(Sucesor(Raiz.getDer()).getValor());
-        if (nodo.getIzq()==Sucesor(Raiz.getDer())) {
-            nodo.setIzq(Sucesor(Raiz.getDer()).getDer());
+        if (EsHoja(Buscar(Raiz,dato))) {
+            if (BuscarPadre(Raiz,dato).getValor()<dato) {BuscarPadre(Raiz,dato).setDer(null);}
+            else{BuscarPadre(Raiz,dato).setIzq(null);}
         }
+        
+        else if (Tiene1Hijos(Buscar(Raiz,dato))) {
+            if (BuscarPadre(Raiz,dato).getValor()<dato) {
+                if (Buscar(Raiz,dato).getDer()==null) {BuscarPadre(Raiz,dato).setDer(Buscar(Raiz,dato).getIzq());}
+                else{BuscarPadre(Raiz,dato).setDer(Buscar(Raiz,dato).getDer());}
+            }else{
+                if (Buscar(Raiz,dato).getDer()==null) {BuscarPadre(Raiz,dato).setIzq(Buscar(Raiz,dato).getIzq());}
+                else{BuscarPadre(Raiz,dato).setIzq(Buscar(Raiz,dato).getDer());}
+            }
+            
+            
+            
+            
+        }
+        
     }
     
     public boolean EsHoja(Nodo nodo){
