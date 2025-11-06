@@ -5,17 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="481756cd-29ac-4b45-8358-fb20805d05a4" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../Unidad 3/Lista/proyecto-caf/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Unidad 3/Lista/proyecto-caf/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Unidad 3/Lista/proyecto-caf/src/main/java/com/mycompany/proyecto/caf/ListaPlatillos.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Unidad 3/Lista/proyecto-caf/src/main/java/com/mycompany/proyecto/caf/ListaPlatillos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../arbol/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../arbol/src/main/java/com/mycompany/arbol/Aarbol.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../arbol/src/main/java/com/mycompany/arbol/Arbol.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../arbol/src/main/java/com/mycompany/arbol/NodoArbol.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../arbol/target/classes/com/mycompany/arbol/Aarbol.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../arbol/target/classes/com/mycompany/arbol/Arbol.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../arbol/target/classes/com/mycompany/arbol/NodoArbol.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../arbol/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../arbol/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Arbolbinario/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Arbolbinario/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Arbolbinario/src/main/java/org/example/Arbol.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Arbolbinario/src/main/java/org/example/Arbol.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/arbol/Aarbol.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mycompany/arbol/Aarbol.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/arbol/Arbol.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mycompany/arbol/Arbol.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,9 +18,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 7
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
   <component name="ProjectId" id="34nEkNfjipvjQneIFFZE4OXwyOF" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -40,7 +33,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/luis/mi-repositorio/Java/Estructura de datos/Unidad 4/arbol"
+    "last_opened_file_path": "/home/luis/mi-repositorio/Java/Estructura de datos/Unidad 4/Arbolbinario"
   }
 }]]></component>
   <component name="TaskManager">

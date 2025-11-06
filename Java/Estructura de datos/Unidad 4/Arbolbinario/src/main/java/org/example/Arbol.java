@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package org.example;
 
 public class Arbol {
@@ -85,18 +81,27 @@ public class Arbol {
     }
     
     public Nodo BuscarPadre(Nodo nodo,int dato){
-        if (nodo.getIzq().getValor()==dato||nodo.getDer().getValor()==dato) {
+        if (nodo.getValor()==dato) {
             return nodo;
         }
-        
         else{
-            if (nodo.getValor()<dato) {return Buscar(nodo.getDer(),dato);}
-            else{return Buscar(nodo.getIzq(),dato);}
+            if (nodo.getValor()<dato) {
+                if (nodo.getDer().getValor()==dato) {
+                    
+                    return nodo;
+                }else{return BuscarPadre(nodo.getDer(),dato);}
+            }
+            else{
+                if (nodo.getIzq().getValor()==dato) {
+                    return nodo;
+                }
+                else{return BuscarPadre(nodo.getIzq(),dato);}
+                }
         }
     }
     
     public void mostrarpadre(){
-        System.out.println(BuscarPadre(Raiz,9).getValor());
+        System.out.println(BuscarPadre(Raiz,11).getValor());
         
     }
     
@@ -129,20 +134,13 @@ public class Arbol {
         return nodo.getDer()!=null^nodo.getIzq()!=null;
     }
     
-    
-    public void Eliminar2(int dato){
-    Nodo aux=Raiz;
-    while(aux.getIzq().getValor()!=dato&&aux.getIzq().getValor()!=dato){
-        if (aux.getValor()<dato) {
-            aux.getDer();
-        }else{
-            aux.getIzq();
-        }
+    public void mostrarh(){
+        System.out.println(Tiene2Hijos(Buscar(Raiz,14)));
+
     }
-    
-    
-    }
-    
-    
+
+
+
+
     
 }

@@ -93,19 +93,18 @@ public class Aarbol {
     }
     public void elmininar(int buscar){
         NodoArbol aux=Raiz;
-        do {
-            if (aux.getClave()==buscar) {
-                
-            }//compara si es el numero a buscar
-            if (buscar<aux.getClave()) {
+        while(aux.getDer().getClave()!=buscar&&aux.getIzq().getClave()!=buscar){
+            if (aux.getClave()<buscar) {
+                aux=aux.getDer();
+            }else{
                 aux=aux.getIzq();
             }
-            else{aux=aux.getDer();}
-            if (aux==null) {
-                break;
-            }
-        } while (true);
+        }
+        System.out.println("el padre es: "+aux.getClave());
+    }
     
-    };
+    public void mostrar1(){
+    ImprimirINorden(Raiz);
+    }
     
 }
