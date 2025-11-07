@@ -5,21 +5,20 @@ import java.util.Scanner;
 public class Ruleta {
 
     Scanner leer = new Scanner(System.in);
-    private Nodo inicio;
-    private Nodo fin;
+    private Nodo cabecera;
     private int victimas = 0;
 
     public Ruleta() {
-        this.inicio = null;
-        this.fin = null;
+        this.cabecera = null;
+        
     }
 
     public boolean listavacia() {
-        return inicio == null;
+        return cabecera == null;
     }
 
     public void ingresar() {
-        inicio = fin = null; 
+        cabecera  = null; 
         System.out.println("Ingresa la cantidad de Victimas");
         victimas = leer.nextInt();
 
@@ -33,18 +32,22 @@ public class Ruleta {
             System.out.println("Ingresa la victima [" + i + "]");
             Nodo nuevo = new Nodo(leer.next());
             if (listavacia()) {
-                inicio = fin = nuevo;
+                cabecera  = nuevo;
             } else {
-                nuevo.setAnt(fin);
-                fin.setSig(nuevo);
-                fin = nuevo;
+                nuevo.setAnt(cabecera);
+                cabecera.setSig(nuevo);
+                cabecera = nuevo;
             }
         }
 
         
-        if (inicio != null) { 
-            inicio.setAnt(fin);
-            fin.setSig(inicio);
+        if (cabecera != null) { 
+            Nodo aux=cabecera;
+            while(aux.getSig()!=null){
+                aux=aux.getSig();
+            }
+            cabecera.setAnt(aux);
+            aux.setSig(cabecera);
         }
     }
 
@@ -57,12 +60,12 @@ public class Ruleta {
  
         if (victimas == 1) { 
             System.out.println("Solo hay un participante. Es el ganador!!!");
-            System.out.println("El ganador es: " + inicio.getDato());
+            System.out.println("El ganador es: " + cabecera.getDato());
             return;
         }
 
         int restantes = victimas;
-        Nodo actual = inicio; 
+        Nodo actual = cabecera; 
         
         System.out.println("INICIAR!!!--> Hay " + restantes + " participantes");
 
@@ -86,12 +89,10 @@ public class Ruleta {
             siguiente.setAnt(anterior);
 
             
-            if (actual == inicio) {
-                inicio = siguiente;
+            if (actual == cabecera) {
+                cabecera = siguiente;
             }
-            if (actual == fin) {
-                fin = anterior;
-            }
+            
 
             restantes--;
             System.out.println("Quedan " + restantes + " participantes.");
@@ -105,8 +106,7 @@ public class Ruleta {
         System.out.println("El ganador es:" + actual.getDato() + " felicidades");
 
     
-        inicio = null;
-        fin = null;
+        cabecera = null;
         victimas = 0;
     }
 }
