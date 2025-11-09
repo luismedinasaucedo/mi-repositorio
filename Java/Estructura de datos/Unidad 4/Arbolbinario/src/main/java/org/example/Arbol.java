@@ -15,7 +15,7 @@ public class Arbol {
             Raiz.Insertar(valor);
         }
     }
-    
+
     public void Preorden(Nodo a){
         if (a==null) {
             return;
@@ -115,23 +115,33 @@ public class Arbol {
     }
     
     public void Eliminar(int dato){
-        if (EsHoja(Buscar(Raiz,dato))) {
-            if (BuscarPadre(Raiz,dato).getValor()<dato) {BuscarPadre(Raiz,dato).setDer(null);}
-            else{BuscarPadre(Raiz,dato).setIzq(null);}
+        Nodo padre=BuscarPadre(Raiz,dato);
+        Nodo buscar=Buscar(Raiz,dato);
+        
+        if (EsHoja(buscar)) {
+            if (padre.getValor()<dato) {padre.setDer(null);}
+            else{padre.setIzq(null);}
         }
         
-        else if (Tiene1Hijos(Buscar(Raiz,dato))) {
-            if (BuscarPadre(Raiz,dato).getValor()<dato) {
-                if (Buscar(Raiz,dato).getDer()==null) {BuscarPadre(Raiz,dato).setDer(Buscar(Raiz,dato).getIzq());}
-                else{BuscarPadre(Raiz,dato).setDer(Buscar(Raiz,dato).getDer());}
+        else if (Tiene1Hijos(buscar)) {
+            if (padre.getValor()<dato) {
+                if (buscar.getDer()==null) {padre.setDer(buscar.getIzq());}
+                else{padre.setDer(buscar.getDer());}
             }else{
-                if (Buscar(Raiz,dato).getDer()==null) {BuscarPadre(Raiz,dato).setIzq(Buscar(Raiz,dato).getIzq());}
-                else{BuscarPadre(Raiz,dato).setIzq(Buscar(Raiz,dato).getDer());}
+                if (buscar.getDer()==null) {padre.setIzq(buscar.getIzq());}
+                else{padre.setIzq(buscar.getDer());}
+            } 
+        }
+        else if (Tiene2Hijos(buscar)) {
+            Nodo sucesor=Sucesor(buscar.getDer());
+            if (padre.getValor()<dato) {
+                sucesor.setIzq(buscar.getIzq());
+                padre.setDer(sucesor);
+                
+            }else{
+                sucesor.setIzq(buscar.getIzq());
+                padre.setIzq(sucesor);
             }
-            
-            
-            
-            
         }
         
     }
@@ -151,6 +161,46 @@ public class Arbol {
     public void mostrarh(){
         System.out.println(Tiene2Hijos(Buscar(Raiz,14)));
 
+    }
+
+
+    public void Eliminar2(int dato){
+        Nodo Buscar=Buscar(Raiz,dato);
+        Nodo padre=BuscarPadre(Raiz,dato);
+        if (EsHoja(Buscar)){
+            if (Buscar==Raiz){
+                Raiz=null;
+            }
+            else {
+                if (padre.getValor()<dato){
+                    padre.setDer(null);
+                }
+                else {
+                    padre.setIzq(null);
+                }
+            }
+        }//es hoja
+        if (Tiene1Hijos(Buscar)){
+            if (Buscar==Raiz){
+                if (Buscar.getIzq()==null)Raiz=Raiz.getDer();
+                if (Buscar.getDer()==null)Raiz=Raiz.getIzq();
+            }//tiene un hijo y es la raiz
+            else{
+                if (padre.getValor()>dato){
+                    if (Buscar.getDer()==null)padre.setIzq(Buscar.getIzq());
+                    else padre.setIzq(Buscar.getDer());
+                }//el nodo que busco esta a la izq
+                else {
+                    if (Buscar.getDer()==null)padre.setDer(Buscar.getIzq());
+                    else padre.setDer(Buscar.getDer());
+                }//el nodo que busco esta a la derech
+            }
+        }//tiene un hijo
+        if (Tiene2Hijos(Buscar)){
+            Nodo sucesor=Sucesor(Buscar.getDer());
+
+
+        }
     }
 
 
