@@ -65,9 +65,10 @@ public class Arbol {
     
     public Nodo Sucesor(Nodo nodo){
         if (nodo.getIzq()==null) {
-            return nodo;
+        return nodo;
+        }else{
+            return Sucesor(nodo.getIzq());
         }
-        else{return Sucesor(nodo.getIzq());}
     }
     
     public Nodo Buscar(Nodo nodo,int dato){
@@ -106,8 +107,8 @@ public class Arbol {
     }
     
     
-    public void mostrarsucesor(){
-        System.out.println(Sucesor(Raiz.getDer()).getValor());
+    public void mostrarsucesor(int dato){
+        System.out.println(Sucesor(Buscar(Raiz,dato).getDer()).getValor());
     }
     
     public void mostrarbusqueda(){
@@ -198,9 +199,9 @@ public class Arbol {
         }//tiene un hijo
         if (Tiene2Hijos(Buscar)){
             Nodo sucesor=Sucesor(Buscar.getDer());
-
-
-        }
+            Eliminar2(sucesor.getValor());
+            Buscar.setValor(sucesor.getValor());
+        }//tiene 2 hijos
     }
 
 
