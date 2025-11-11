@@ -22,6 +22,7 @@ public class EdT3A3PostOrden {
         }
     }
     static void preorden(Pila A,Pila B,Pila C){
+        String variable="";
         int contador=0;
         while(!B.PilaVacia()){
             if (B.pull()!=null) {
@@ -53,7 +54,16 @@ public class EdT3A3PostOrden {
         if (!C.PilaVacia()) {
             A.Push(C.Pop());
         }
-        A.mostrar();// (4+5)+(3-2)
+        A.mostrar();
+        System.out.println("");
+        while(!A.PilaVacia()){
+        variable=A.Pop().concat(variable);
+            
+        
+        }
+       System.out.println(variable);
+            
+// (4+5)+(3-2)
     }
     
 }

@@ -4,21 +4,20 @@ import java.util.Scanner;
 
 public class Lista {
     Scanner leer=new Scanner(System.in);
-    private Nodo inicio;
-    private Nodo fin;
+    private Nodo cabecera;
     private int cantidad=0;
 
     public Lista() {
-        this.inicio = null;
-        this.fin = null;
+        this.cabecera = null;
+        this.cabecera = null;
     }
     
     public boolean listavacia(){
-    return inicio==null;
+    return cabecera==null;
     }
     
     public void ingresar(){
-        inicio=fin=null;
+        cabecera=null;
         System.out.println("introduce cantidad nombres a ingresar");
         cantidad=leer.nextInt();
         
@@ -26,15 +25,22 @@ public class Lista {
             System.out.println("introduce el dato "+i);
             Nodo nuevo=new Nodo(leer.next());
             if (listavacia()) {
-                inicio=fin=nuevo;
+                cabecera=nuevo;
                 continue;
             }
-            nuevo.setAnt(fin);
-            fin.setSig(nuevo);
-            fin=nuevo;
+            nuevo.setAnt(cabecera);
+            cabecera.setSig(nuevo);
+            cabecera=nuevo;
         }
-        inicio.setAnt(fin);
-        fin.setSig(inicio);
+        Nodo aux=cabecera;
+            while(aux.getAnt()!=null){
+                aux=aux.getAnt();
+            }
+            
+        
+        
+        aux.setAnt(cabecera);
+        cabecera.setSig(aux);
     }//ingresar
     public void ruleta(){
         if (listavacia()) {
@@ -43,24 +49,17 @@ public class Lista {
         
         while(cantidad!=1){
             int num=(int)(Math.random()*6)+1;
-            Nodo aux=inicio;
+            Nodo aux=cabecera;
             for (int i = 0; i <= num; i++) {
                 aux=aux.getSig();
             }
-            if (aux==inicio) {
+            if (aux==cabecera) {
                 System.out.println("se elimino a: "+aux.getDato());
-                inicio=inicio.getSig();
-                inicio.setAnt(fin);
-                fin.setSig(inicio);
+                cabecera=cabecera.getSig();
+                cabecera.setAnt(cabecera.getAnt().getAnt());
                 cantidad--;
             }//esta al inicio
-            else if(aux==fin){
-                System.out.println("se elimino a: "+aux.getDato());
-                fin=fin.getAnt();
-                fin.setSig(inicio);
-                inicio.setAnt(fin);
-                cantidad--;
-            }//esta al final
+            
             else{
                 System.out.println("se elimino a: "+aux.getDato());
                 aux.getAnt().setSig(aux.getSig());
@@ -71,7 +70,17 @@ public class Lista {
             
         }
         System.out.println("");
-        System.out.println("el ganador es: "+inicio.getDato());
+        System.out.println("el ganador es: "+cabecera.getDato());
+    }
+    public void mostrar(){
+        Nodo aux=cabecera;
+        while(aux!=null){
+            System.out.println(aux.getDato());
+            aux=aux.getSig();
+                    
+    }
+    
+    
     }
     
 }
