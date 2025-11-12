@@ -9,7 +9,7 @@ do {
     menu=leer.nextInt();
     switch (menu){
         case 1->{objGrafo.AñadirV(leer.next().charAt(0));}
-        case 2->{}
+        case 2->{objGrafo.AgregarArista('a','b',10);}
         case 3->{}
 
     }
