@@ -35,30 +35,30 @@ public class ListadeAdyacencia {
     }
 
     public void AgregarArista(char x,char y,int peso){
-        NodoVertice a =BuscarVertice(x);
+        NodoVertice a = BuscarVertice(x);
         NodoVertice b = BuscarVertice(y);
         if (a==null||b==null){
             System.out.println("no exsiste dato a buscar");
             return;
         }
-        a.PrimerA=InsertarArista(b,peso);
-
-
-
-
+        a.InsertarArista(b,peso);
     }
-    public NodoArista InsertarArista(NodoVertice x,int peso){
-        if (x.PrimerA==null){
-            return x.PrimerA=new NodoArista(x,peso);
-        }
-        else{
-            NodoArista aux=x.PrimerA;
-            while (aux.SigA!=null){
-                aux=aux.SigA;
+
+    public void MOstrar(){
+        NodoVertice auxv=PrimerVertice;
+        NodoArista auxa=null;
+        while (auxv!=null){
+            IO.println("vetice "+auxv.Id+"\t");
+            auxa=auxv.PrimerA;
+            while (auxa!=null){
+                System.out.println(auxa.VD.Id+"|"+auxa.Peso);
+                auxa=auxa.SigA;
             }
-            return aux.SigA=new NodoArista(x,peso);
+            auxv=auxv.SigV;
         }
+
     }
+
 
 
 

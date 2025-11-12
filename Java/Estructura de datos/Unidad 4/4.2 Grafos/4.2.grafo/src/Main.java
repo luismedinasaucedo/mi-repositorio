@@ -10,7 +10,7 @@ do {
     switch (menu){
         case 1->{objGrafo.AñadirV(leer.next().charAt(0));}
         case 2->{objGrafo.AgregarArista('a','b',10);}
-        case 3->{}
+        case 3->{objGrafo.MOstrar();}
 
     }
 }while (menu!=3);
