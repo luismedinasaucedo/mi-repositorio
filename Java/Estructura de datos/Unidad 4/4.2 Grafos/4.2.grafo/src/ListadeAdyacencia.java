@@ -59,6 +59,24 @@ public class ListadeAdyacencia {
 
     }
 
+    public void CaminoCorto(char o){
+        int NVertices=0;
+        NodoVertice auxv=PrimerVertice;
+        int IVO=-1;
+
+        while (auxv!=null){
+            NVertices++;
+            auxv=auxv.SigV;
+        }
+
+        System.out.println("en "+NVertices +" vertices\n");
+
+        TablaDJ TDJ[]=new TablaDJ[NVertices];
+        auxv=PrimerVertice;
+
+
+    }
+
 
 
 

@@ -15,11 +15,12 @@ public class NodoVertice {
         }
         else{
             NodoArista aux=PrimerA;
-            while (aux.SigA==null){
+            while (aux!=null){
                 if (aux.VD==x){
                     System.out.println("ya existe este arista");
                     return null;
                 }
+                if (aux.SigA==null)break;
                 aux=aux.SigA;
             }
             return aux.SigA=new NodoArista(x,peso);

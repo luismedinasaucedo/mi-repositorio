@@ -21,7 +21,10 @@ public class Main {
 
 
         System.out.println("");
-        arbol.Eliminar2(15);
+        arbol.MostrarInorden();
+        System.out.println("");
+        arbol.Eliminar2(2);
+        arbol.Eliminar2(3);
         System.out.println();
         arbol.MostrarInorden();
         
