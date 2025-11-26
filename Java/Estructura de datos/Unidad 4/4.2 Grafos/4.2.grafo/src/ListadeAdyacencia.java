@@ -154,6 +154,12 @@ public class ListadeAdyacencia {
         }
 
     }
+    public void EliminarN(char borrar){
+        NodoVertice aux=PrimerVertice;
+        if (aux.Id==borrar){
+
+        }
+    }
 
     
 
