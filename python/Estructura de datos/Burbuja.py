@@ -10,9 +10,7 @@ def mostrar(arreglo):
 def burbuja(arreglo,bol):
     bol=False
     for i in range(0,len(arreglo)-1):
-        if i==len(arreglo)-1:
-            break
-        if arreglo[i]>arreglo[i+1]:
+        if not i==len(arreglo)-1 and arreglo[i]>arreglo[i+1]:
             arreglo[i],arreglo[i+1]=arreglo[i+1],arreglo[i]
             bol=True
     if bol:
