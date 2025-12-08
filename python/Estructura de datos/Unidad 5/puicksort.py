@@ -13,23 +13,23 @@ def partir(arreglo,inicio,fin):
 
 def quicksort(arreglo,inicio,fin):
     if inicio<fin:
-        indice = partir(arreglo,inicio,fin)
         mostrar(arreglo)
+        indice = partir(arreglo,inicio,fin)
         quicksort(arreglo,inicio,indice-1)
         quicksort(arreglo,indice+1,fin)
 
 def llenar(arreglo):
-    for i in range (100):
-        arreglo[i]=random.randint(1,190)
+    for i in range (len(arreglo)):
+        arreglo[i]=random.randint(1,100)
 
 def mostrar(arreglo):
-    for i in range (100):
+    for i in range (len(arreglo)):
         print(i,"-"+"|"*arreglo[i])
 
-arreglo = [None]*100
+arreglo = [None]*30
 llenar(arreglo)
-mostrar(arreglo)
+#mostrar(arreglo)
 
-quicksort(arreglo,0,99)
+quicksort(arreglo,0,len(arreglo)-1)
 print("\n")
 mostrar(arreglo)
