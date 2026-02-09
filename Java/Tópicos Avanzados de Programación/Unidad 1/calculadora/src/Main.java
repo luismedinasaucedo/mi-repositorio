@@ -1,0 +1,113 @@
+import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.ActiveEvent;
+import java.awt.event.ActionListener;
+import javax.swing.*;
+public class calculadora extends JFrame {
+    JFrame frame = new JFrame();
+
+    calculadora() {
+        frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setLocationRelativeTo(null);
+        frame.setLayout(null);
+
+    }
+    JButton botoSumar=new JButton("sumar");
+    JButton botoRaiz=new JButton("raiz");
+    JButton botoLimpiar=new JButton("limpiar");
+    JButton botoSalir=new JButton("salir");
+    JLabel etuquetamun1=new JLabel("num 1");
+    JLabel etuquetamun2=new JLabel("num 2");
+    JLabel ETQResultado=new JLabel("Resultado 1");
+    JLabel ETQResultado2=new JLabel("resultado 2");
+    JTextField txtf_1=new JTextField();
+    JTextField txtf_2=new JTextField();
+
+    void metodo(){
+        frame.add(etuquetamun1);
+        frame.add(etuquetamun2);
+        frame.add(ETQResultado);
+        frame.add(ETQResultado2);
+        frame.add(txtf_1);
+        frame.add(txtf_2);
+        frame.add(botoSumar);
+        frame.add(botoRaiz);
+        frame.add(botoLimpiar);
+        frame.add(botoSalir);
+
+        etuquetamun1.setBounds(70,150,350,80);
+        txtf_1.setBounds(440,150,300,80);
+        etuquetamun2.setBounds(70,230,350,80);
+        txtf_2.setBounds(440,230,300,80);
+        ETQResultado.setBounds(70,400,800,80);
+        ETQResultado2.setBounds(70,480,800,80);
+        botoSumar.setBounds(70,700,300,80);
+        botoRaiz.setBounds(370,700,300,80);
+        botoLimpiar.setBounds(70,781,300,80);
+        botoSalir.setBounds(370,781,300,80);
+
+        etuquetamun1.setForeground(Color.BLACK);
+        etuquetamun2.setForeground(Color.BLACK);
+        ETQResultado.setForeground(Color.RED);
+        ETQResultado2.setForeground(Color.red);
+        botoSalir.setForeground(Color.BLUE);
+        botoSumar.setForeground(Color.BLACK);
+
+        botoSumar.setFont(new java.awt.Font("Arial",1,30));
+        botoRaiz.setFont(new java.awt.Font("Arial",1,30));
+        botoLimpiar.setFont(new java.awt.Font("Calibri",1,30));
+        botoSalir.setFont(new java.awt.Font("Calibri",1,30));
+        etuquetamun1.setFont(new java.awt.Font("Calibri",3,25));
+        etuquetamun2.setFont(new java.awt.Font("Calibri",3,25));
+        txtf_1.setFont(new java.awt.Font("Arial",1,30));
+        txtf_2.setFont(new java.awt.Font("Arial",1,30));
+        ETQResultado.setFont(new java.awt.Font("Arial",1,30));
+        ETQResultado2.setFont(new java.awt.Font("Arial",1,30));
+        frame.setVisible(true);
+        botoSumar.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                double suma=0;
+                double n1,n2;
+                n1=Double.parseDouble(txtf_1.getText());
+                n2=Double.parseDouble(txtf_2.getText());
+                suma=n1+n2;
+                ETQResultado.setText("la suma es suma "+suma);
+            }
+        });
+        botoRaiz.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                double raiz1,raiz2,n1,n2;
+                n1=Double.parseDouble(txtf_1.getText());
+                n2=Double.parseDouble(txtf_2.getText());
+                raiz1=Math.sqrt(n1);
+                raiz2=Math.sqrt(n2);
+                ETQResultado.setText("Raiz 1: "+raiz1);
+                ETQResultado2.setText("Raiz 2: "+raiz2);
+            }
+        });
+        botoLimpiar.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                txtf_1.setText("");
+                txtf_2.setText("");
+                ETQResultado.setText("");
+                ETQResultado2.setText("");
+            }
+        });
+        botoSalir.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                frame.setVisible(false);
+                frame.dispose();
+            }
+        });
+
+    }
+}
+
+void main() {
+    calculadora a=new calculadora();
+    a.metodo();
+
+
+}
