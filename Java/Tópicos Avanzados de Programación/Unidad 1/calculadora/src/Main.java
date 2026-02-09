@@ -14,9 +14,13 @@ public class calculadora extends JFrame {
 
     }
     JButton botoSumar=new JButton("sumar");
+    JButton botoRestar=new JButton("Restar");//1 a
+    JButton botoMultiplicar=new JButton("Multiplicar");
+    JButton botoDividir=new JButton("Dividir");
     JButton botoRaiz=new JButton("raiz");
     JButton botoLimpiar=new JButton("limpiar");
     JButton botoSalir=new JButton("salir");
+
     JLabel etuquetamun1=new JLabel("num 1");
     JLabel etuquetamun2=new JLabel("num 2");
     JLabel ETQResultado=new JLabel("Resultado 1");
@@ -35,6 +39,9 @@ public class calculadora extends JFrame {
         frame.add(botoRaiz);
         frame.add(botoLimpiar);
         frame.add(botoSalir);
+        frame.add(botoRestar);
+        frame.add(botoMultiplicar);
+        frame.add(botoDividir);
 
         etuquetamun1.setBounds(70,150,350,80);
         txtf_1.setBounds(440,150,300,80);
@@ -46,6 +53,10 @@ public class calculadora extends JFrame {
         botoRaiz.setBounds(370,700,300,80);
         botoLimpiar.setBounds(70,781,300,80);
         botoSalir.setBounds(370,781,300,80);
+        botoRestar.setBounds(370,861,300,80);
+        botoMultiplicar.setBounds(70,861,300,80);
+        botoDividir.setBounds(670,861,300,80);
+
 
         etuquetamun1.setForeground(Color.BLACK);
         etuquetamun2.setForeground(Color.BLACK);
@@ -53,6 +64,9 @@ public class calculadora extends JFrame {
         ETQResultado2.setForeground(Color.red);
         botoSalir.setForeground(Color.BLUE);
         botoSumar.setForeground(Color.BLACK);
+        botoRestar.setForeground(Color.BLACK);
+        botoMultiplicar.setForeground(Color.BLACK);
+        botoDividir.setForeground(Color.BLACK);
 
         botoSumar.setFont(new java.awt.Font("Arial",1,30));
         botoRaiz.setFont(new java.awt.Font("Arial",1,30));
@@ -64,6 +78,10 @@ public class calculadora extends JFrame {
         txtf_2.setFont(new java.awt.Font("Arial",1,30));
         ETQResultado.setFont(new java.awt.Font("Arial",1,30));
         ETQResultado2.setFont(new java.awt.Font("Arial",1,30));
+        botoRestar.setFont(new java.awt.Font("Arial",1,30));
+        botoMultiplicar.setFont(new java.awt.Font("Arial",1,30));
+        botoDividir.setFont(new java.awt.Font("Arial",1,30));
+
         frame.setVisible(true);
         botoSumar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
