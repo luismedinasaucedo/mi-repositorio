@@ -31,6 +31,9 @@ public class calculadora extends JFrame {
     JTextField txtf_1=new JTextField();
     JTextField txtf_2=new JTextField();
 
+    double [] vector =new double[3];
+    int ind = 0;
+
     void metodo(){
         frame.add(etuquetamun1);
         frame.add(etuquetamun2);
@@ -69,9 +72,9 @@ public class calculadora extends JFrame {
 
         etuquetamun1.setForeground(Color.BLACK);
         etuquetamun2.setForeground(Color.BLACK);
-        ETQResultado.setForeground(Color.RED);
-        ETQResultado2.setForeground(Color.red);
-        botoSalir.setForeground(Color.BLUE);
+        ETQResultado.setForeground(Color.blue);
+        ETQResultado2.setForeground(Color.BLUE);
+        botoSalir.setForeground(Color.RED);
         botoSumar.setForeground(Color.BLACK);
         botoRestar.setForeground(Color.BLACK);
         botoMultiplicar.setForeground(Color.BLACK);
@@ -97,6 +100,8 @@ public class calculadora extends JFrame {
         botoPotencia.setFont(new java.awt.Font("Arial",1,30));
         botoPorcecntaje.setFont(new java.awt.Font("Arial",1,30));
 
+
+
         frame.setVisible(true);
         botoSumar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -105,6 +110,14 @@ public class calculadora extends JFrame {
                 n1=Double.parseDouble(txtf_1.getText());
                 n2=Double.parseDouble(txtf_2.getText());
                 suma=n1+n2;
+                vector[ind]=suma;
+                if (ind <4){
+                    ind++;
+                    String cadena=" ";
+                    for (int j = 0; j < ind; j++) {
+                        cadena = cadena+vector[j]+" ";
+                    }
+                }
                 ETQResultado.setText("la suma es suma "+suma);
             }
         });
