@@ -16,7 +16,10 @@ public class calculadora extends JFrame {
     JButton botoSumar=new JButton("sumar");
     JButton botoRestar=new JButton("Restar");//1 a
     JButton botoMultiplicar=new JButton("Multiplicar");
-    JButton botoDividir=new JButton("Dividir");
+    JButton botoDividir=new JButton("Dividir");//2
+    JButton botoFactorial=new JButton("Factorial");
+    JButton botoPotencia=new JButton("Potencia");
+    JButton botoPorcecntaje=new JButton("Porcecntaje");
     JButton botoRaiz=new JButton("raiz");
     JButton botoLimpiar=new JButton("limpiar");
     JButton botoSalir=new JButton("salir");
@@ -42,6 +45,9 @@ public class calculadora extends JFrame {
         frame.add(botoRestar);
         frame.add(botoMultiplicar);
         frame.add(botoDividir);
+        frame.add(botoFactorial);
+        frame.add(botoPotencia);
+        frame.add(botoPorcecntaje);
 
         etuquetamun1.setBounds(70,150,350,80);
         txtf_1.setBounds(440,150,300,80);
@@ -49,13 +55,16 @@ public class calculadora extends JFrame {
         txtf_2.setBounds(440,230,300,80);
         ETQResultado.setBounds(70,400,800,80);
         ETQResultado2.setBounds(70,480,800,80);
-        botoSumar.setBounds(70,700,300,80);
-        botoRaiz.setBounds(370,700,300,80);
-        botoLimpiar.setBounds(70,781,300,80);
-        botoSalir.setBounds(370,781,300,80);
-        botoRestar.setBounds(370,861,300,80);
-        botoMultiplicar.setBounds(70,861,300,80);
-        botoDividir.setBounds(670,861,300,80);
+        botoSumar.setBounds(70,650,300,80);
+        botoRaiz.setBounds(370,650,300,80);
+        botoLimpiar.setBounds(70,731,300,80);
+        botoSalir.setBounds(370,731,300,80);
+        botoRestar.setBounds(370,811,300,80);
+        botoMultiplicar.setBounds(70,811,300,80);
+        botoDividir.setBounds(670,811,300,80);
+        botoFactorial.setBounds(670,731,300,80);
+        botoPotencia.setBounds(670,651,300,80);
+        botoPorcecntaje.setBounds(370,891,300,80);
 
 
         etuquetamun1.setForeground(Color.BLACK);
@@ -67,6 +76,9 @@ public class calculadora extends JFrame {
         botoRestar.setForeground(Color.BLACK);
         botoMultiplicar.setForeground(Color.BLACK);
         botoDividir.setForeground(Color.BLACK);
+        botoFactorial.setForeground(Color.BLACK);
+        botoPotencia.setForeground(Color.BLACK);
+        botoPorcecntaje.setForeground(Color.BLACK);
 
         botoSumar.setFont(new java.awt.Font("Arial",1,30));
         botoRaiz.setFont(new java.awt.Font("Arial",1,30));
@@ -81,6 +93,9 @@ public class calculadora extends JFrame {
         botoRestar.setFont(new java.awt.Font("Arial",1,30));
         botoMultiplicar.setFont(new java.awt.Font("Arial",1,30));
         botoDividir.setFont(new java.awt.Font("Arial",1,30));
+        botoFactorial.setFont(new java.awt.Font("Arial",1,30));
+        botoPotencia.setFont(new java.awt.Font("Arial",1,30));
+        botoPorcecntaje.setFont(new java.awt.Font("Arial",1,30));
 
         frame.setVisible(true);
         botoSumar.addActionListener(new ActionListener() {
