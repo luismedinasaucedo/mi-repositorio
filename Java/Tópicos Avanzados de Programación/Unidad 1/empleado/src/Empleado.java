@@ -21,7 +21,7 @@ class FrameInicio extends JFrame{
 
     FrameInicio(){
         FrameInicio.setTitle("Frame1");
-        FrameInicio.getContentPane().setBackground(Color.blue); // Se usa getContentPane para el fondo
+        FrameInicio.getContentPane().setBackground(Color.gray); // Se usa getContentPane para el fondo
         FrameInicio.setExtendedState(JFrame.MAXIMIZED_BOTH);
         FrameInicio.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         FrameInicio.setLocationRelativeTo(null);
@@ -162,7 +162,7 @@ public class Empleado extends FrameInicio{ //<-- Aqui con esto traeremos tooodo 
         this.Imagen = Imagen;
 
         setExtendedState(JFrame.MAXIMIZED_BOTH);
-        getContentPane().setBackground(Color.blue);
+        getContentPane().setBackground(Color.gray);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setLayout(null);
