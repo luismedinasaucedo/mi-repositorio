@@ -1,6 +1,5 @@
-import java.awt.Color;
+import java.awt.*;
 import java.awt.event.ActionEvent;
-import java.awt.ActiveEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
 
@@ -54,12 +53,57 @@ static int i=0;
     JTextArea textoArea=new JTextArea();
     String cadena=" ";
 
+
     void metodos(){
         frame.add(textoArea);
         textoArea.setBounds(70,800,400,200);
+        etiquetaImagen.setBounds(1000,10,1400,1000);
+        frame.add(etiquetaImagen);
+        frame.add(BotonSalir);
+        frame.add(MostrarRFC);
+        frame.add(txtAP1);
+        frame.add(txtAP2);
+        frame.add(txtNOM);
+        frame.add(txtAÑO);
+        frame.add(txtDIA);
+        frame.add(txtMES);
+        frame.add(ETQ0);
+        frame.add(ETQ1);
+        frame.add(ETQ2);
+        frame.add(ETQ3);
+        frame.add(ETQ4);
+        frame.add(ETQ5);
+        frame.add(MostrarCalcularRFC);
+        frame.add(ETQResultado);
+        frame.add(BotonLimpiar);
+
+        ETQ0.setBounds(70,70,300,80);
+        ETQ0.setFont(new Font("arial",1,30));
+        ETQ1.setBounds(0,70,300,80);
+        ETQ1.setFont(new Font("arial",1,30));
+        ETQ2.setBounds(70,70,300,80);
+        ETQ2.setFont(new Font("arial",1,30));
+        ETQ3.setBounds(70,70,300,80);
+        ETQ3.setFont(new Font("arial",1,30));
+        ETQ4.setBounds(70,70,300,80);
+        ETQ4.setFont(new Font("arial",1,30));
+        ETQ5.setBounds(70,70,300,80);
+        ETQ5.setFont(new Font("arial",1,30));
+        txtAP1.setBounds(70,70,300,80);
+        txtAP1.setFont(new Font("arial",1,30));
+        txtAP2.setBounds(70,70,300,80);
+        txtAP2.setFont(new Font("arial",1,30));
+        txtNOM.setBounds(70,70,300,80);
+        txtNOM.setFont(new Font("arial",1,30));
+        txtAÑO.setBounds(70,70,300,80);
+        txtAÑO.setFont(new Font("arial",1,30));
+
+        frame.setVisible(true);
     }
 }
 
 void main() {
 
+    RFCRegistros obj=new RFCRegistros();
+    obj.metodos();
 }

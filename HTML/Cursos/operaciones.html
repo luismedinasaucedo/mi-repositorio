@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora - Luis Carlo Medina Saucedo</title>
+    <style>
+        /* Fondo azul oscuro para toda la página */
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #0a192f; /* Azul oscuro profundo */
+        }
+
+        .card { 
+            background: #ffffff; 
+            padding: 2.5rem; 
+            border-radius: 12px; 
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5); 
+            width: 350px; 
+            text-align: center;
+        }
+
+        h2 { 
+            color: #0a192f; 
+            margin-bottom: 5px;
+        }
+
+        .autor {
+            color: #555;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        input { 
+            width: 100%; 
+            padding: 12px; 
+            margin: 8px 0; 
+            border: 2px solid #e0e0e0; 
+            border-radius: 6px; 
+            box-sizing: border-box;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        input:focus {
+            border-color: #1a73e8;
+        }
+
+        .btn-group { 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 10px; 
+            margin-top: 15px; 
+        }
+
+        button { 
+            padding: 12px; 
+            cursor: pointer; 
+            border: none; 
+            border-radius: 6px; 
+            background-color: #1a73e8; 
+            color: white; 
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+
+        button:hover { 
+            background-color: #1557b0; 
+        }
+
+        #resultado { 
+            margin-top: 25px; 
+            padding: 15px; 
+            background-color: #f8f9fa;
+            border-radius: 6px;
+            font-size: 1.1rem;
+            font-weight: bold; 
+            color: #0a192f; 
+            border: 1px dashed #ccc;
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h2>Métodos Numéricos</h2>
+    <p class="autor">Elaborado por: Luis Carlo Medina Saucedo</p>
+    
+    <input type="number" id="num1" placeholder="Primer número">
+    <input type="number" id="num2" placeholder="Segundo número">
+
+    <div class="btn-group">
+        <button onclick="operacion('suma')">Sumar (+)</button>
+        <button onclick="operacion('resta')">Restar (-)</button>
+        <button onclick="operacion('multi')">Multiplicar (×)</button>
+        <button onclick="operacion('div')">Dividir (÷)</button>
+    </div>
+
+    <div id="resultado">Esperando valores...</div>
+</div>
+
+<script>
+    function operacion(tipo) {
+        const n1 = parseFloat(document.getElementById('num1').value);
+        const n2 = parseFloat(document.getElementById('num2').value);
+        const cajaResultado = document.getElementById('resultado');
+
+        if (isNaN(n1) || isNaN(n2)) {
+            cajaResultado.innerText = "⚠️ Ingresa ambos números";
+            return;
+        }
+
+        let calculo;
+        let simbolo;
+
+        switch(tipo) {
+            case 'suma':  calculo = n1 + n2; simbolo = "+"; break;
+            case 'resta': calculo = n1 - n2; simbolo = "-"; break;
+            case 'multi': calculo = n1 * n2; simbolo = "×"; break;
+            case 'div': 
+                if (n2 === 0) {
+                    cajaResultado.innerText = "❌ Error: Div entre 0";
+                    return;
+                }
+                calculo = n1 / n2; 
+                simbolo = "÷";
+                break;
+        }
+
+        // Mostramos el resultado de forma elegante
+        cajaResultado.innerHTML = `<small>${n1} ${simbolo} ${n2} =</small><br>${calculo}`;
+    }
+</script>
+
+</body>
+</html>

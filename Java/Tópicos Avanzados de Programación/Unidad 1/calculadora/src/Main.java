@@ -13,21 +13,21 @@ public class calculadora extends JFrame {
         frame.setLayout(null);
 
     }
-    JButton botoSumar=new JButton("sumar");
+    JButton botoSumar=new JButton("Sumar");
     JButton botoRestar=new JButton("Restar");//1 a
     JButton botoMultiplicar=new JButton("Multiplicar");
     JButton botoDividir=new JButton("Dividir");//2
     JButton botoFactorial=new JButton("Factorial");
     JButton botoPotencia=new JButton("Potencia");
-    JButton botoPorcecntaje=new JButton("Porcecntaje");
-    JButton botoRaiz=new JButton("raiz");
-    JButton botoLimpiar=new JButton("limpiar");
-    JButton botoSalir=new JButton("salir");
+    JButton botoPorcecntaje=new JButton("Porcentaje");
+    JButton botoRaiz=new JButton("Raiz");
+    JButton botoLimpiar=new JButton("Limpiar");
+    JButton botoSalir=new JButton("Salir");
 
-    JLabel etuquetamun1=new JLabel("num 1");
-    JLabel etuquetamun2=new JLabel("num 2");
+    JLabel etuquetamun1=new JLabel("Numero 1");
+    JLabel etuquetamun2=new JLabel("Numero 2");
     JLabel ETQResultado=new JLabel("Resultado 1");
-    JLabel ETQResultado2=new JLabel("resultado 2");
+    JLabel ETQResultado2=new JLabel("Resultado 2");
     JTextField txtf_1=new JTextField();
     JTextField txtf_2=new JTextField();
 
@@ -75,6 +75,8 @@ public class calculadora extends JFrame {
         ETQResultado.setForeground(Color.blue);
         ETQResultado2.setForeground(Color.BLUE);
         botoSalir.setForeground(Color.RED);
+        botoLimpiar.setForeground(Color.BLACK);
+        botoRaiz.setForeground(Color.BLACK);
         botoSumar.setForeground(Color.BLACK);
         botoRestar.setForeground(Color.BLACK);
         botoMultiplicar.setForeground(Color.BLACK);
@@ -85,7 +87,7 @@ public class calculadora extends JFrame {
 
         botoSumar.setFont(new java.awt.Font("Arial",1,30));
         botoRaiz.setFont(new java.awt.Font("Arial",1,30));
-        botoLimpiar.setFont(new java.awt.Font("Calibri",1,30));
+        botoLimpiar.setFont(new java.awt.Font("Arial",1,30));
         botoSalir.setFont(new java.awt.Font("Calibri",1,30));
         etuquetamun1.setFont(new java.awt.Font("Calibri",3,25));
         etuquetamun2.setFont(new java.awt.Font("Calibri",3,25));
@@ -147,6 +149,68 @@ public class calculadora extends JFrame {
                 frame.dispose();
             }
         });
+        botoRestar.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                double n1,n2,resta;
+                n1=Double.parseDouble(txtf_1.getText());
+                n2=Double.parseDouble(txtf_2.getText());
+                resta=n1-n2;
+                ETQResultado.setText("resultado: "+resta);
+            }
+        });
+        botoPorcecntaje.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                double n1,n2;
+                n1=Double.parseDouble(txtf_1.getText())/100;
+                n2=Double.parseDouble(txtf_2.getText())/100;
+                ETQResultado.setText(n1+"%");
+                ETQResultado2.setText(n2+"%");
+            }
+        });
+        botoMultiplicar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                double n1,n2;
+                n1=Double.parseDouble(txtf_1.getText());
+                n2=Double.parseDouble(txtf_2.getText());
+                ETQResultado.setText("resultado: "+n1*n2);
+            }
+        });
+        botoPotencia.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ETQResultado.setText("potencia 1: "+Math.pow(Double.parseDouble(txtf_1.getText()),2));
+                ETQResultado2.setText("potencia 2: "+Math.pow(Double.parseDouble(txtf_2.getText()),2));
+            }
+        });
+        botoFactorial.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                int n1,n2;
+                double f1=1,f2=1;
+                n1=Integer.parseInt(txtf_1.getText());
+                n2=Integer.parseInt(txtf_2.getText());
+
+                for (int i = n1; i >0 ; i--) {
+                    f1=f1*i;
+                }
+                for (int i = n2; i >0 ; i--) {
+                    f2=f2*i;
+                }
+
+                ETQResultado.setText("factorial 1: "+f1);
+                ETQResultado2.setText("factorial 2: "+f2);
+            }
+        });
+        botoDividir.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                double n1,n2;
+                n1=Double.parseDouble(txtf_1.getText());
+                n2=Double.parseDouble(txtf_2.getText());
+                ETQResultado.setText("resultado: "+n1/n2);
+            }
+        });
 
     }
 }
@@ -154,6 +218,9 @@ public class calculadora extends JFrame {
 void main() {
     calculadora a=new calculadora();
     a.metodo();
-
-
+    int al=1;
+    for (int i = 5; i > 0; i--) {
+        al=al*i;
+        System.out.println(al);
+    }
 }
