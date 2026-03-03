@@ -1,4 +1,5 @@
 import javax.swing.*;
+import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -23,6 +24,8 @@ static JFrame pantalla=new JFrame();
         pantalla.add(labe);
         pantalla.add(contra);
         pantalla.add(boto1);
+
+
 
 
         boto1.addActionListener(new ActionListener() {
